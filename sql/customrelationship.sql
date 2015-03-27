@@ -14,3 +14,6 @@ CREATE TABLE IF NOT EXISTS `civicrm_value_pcp_relationship_set` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_entity_id` (`entity_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+
+ALTER TABLE `civicrm_value_pcp_relationship_set`
+  ADD CONSTRAINT `FK_civicrm_value_pcp_relationship_set_entity_id` FOREIGN KEY (`entity_id`) REFERENCES `civicrm_relationship` (`id`) ON DELETE CASCADE;
