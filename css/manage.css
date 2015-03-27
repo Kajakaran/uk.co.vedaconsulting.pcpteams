@@ -108,9 +108,7 @@
   width: 98%;
 }
 .crm-container .crm-pcp-manage .pcp-body .team-section .top-fund-text, 
-.crm-container .crm-pcp-manage .pcp-body .team-section .no-team-text,
-.crm-container .crm-pcp-manage .pcp-body .team-section .team-text,
-.crm-container .crm-pcp-manage .pcp-body .team-section .team-name {
+.crm-container .crm-pcp-manage .pcp-body .team-section .no-team-text {
   display: block;
 }
 .crm-container .crm-pcp-manage .pcp-body .team-section .top-fund-raisers-block, 
@@ -122,15 +120,24 @@
 .crm-container .crm-pcp-manage .pcp-body .team-section .top-fund-raisers-block {
   text-align: center;
 }
-.crm-container .crm-pcp-manage .team-section .invite-team-text {
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center;
-}
 .crm-container .crm-pcp-manage .pcp-body .team-section .avatar {
   display: inline-block;
   float: left;
   width: 20%;
+}
+.crm-container .crm-pcp-manage .pcp-body .team-section .avatar img {
+  float: right;
+  padding-right: 30px;
+}
+.crm-container .crm-pcp-manage .pcp-body .team-section .team-info {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+.crm-container .crm-pcp-manage .pcp-body .team-section .team-stats {
+  display: inline-block;
+  width: 25%;
+  float: right;
 }
 .crm-container .crm-pcp-manage .pcp-body .mem-body-row {
   display: inline-block;
@@ -144,19 +151,6 @@
 .crm-container .crm-pcp-manage .pcp-body .team-section .top-fund-raisers img {
   display: block;
 }
-.crm-container .crm-pcp-manage .pcp-body .team-section .avatar img {
-  float: right;
-  padding-right: 30px;
-}
-.crm-container .crm-pcp-manage .pcp-body .team-section .team-name {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.crm-container .crm-pcp-manage .pcp-body .team-section .invite-team-buttons {
-  width: 35%;
-  margin: 0 auto;
-}
-
 .crm-container .crm-pcp-manage .pcp-body .mem-header,
 .crm-container .crm-pcp-manage .btn-donate,
 .crm-container .crm-pcp-manage .pcp-body .totaliser .colheader {
@@ -205,6 +199,17 @@
 .crm-container .crm-pcp-manage .pcp-btn-red {
   background-color: #e0001a;
 }
+.crm-container .crm-pcp-manage .pcp-bar {
+  height: 10px;
+  border-radius: 10px;
+  background-color: #999;
+  width: 100%;
+}
+.crm-container .crm-pcp-manage .pcp-bar-progress {
+  height: 10px;
+  border-radius: 10px;
+  background-color: #e0001a;
+}
 .crm-container .crm-pcp-manage .pcp-message {
   background-size: 40px 40px;
   background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
@@ -217,8 +222,7 @@
   border-radius: 3px;
   margin-bottom: 10px;
 }
-
 .crm-container .crm-pcp-manage .pcp-info {
-  background-color: #4ea5cd;
-  border-color: #3b8eb5;
+  background-color: #999999;
+  border-color: #55a12c;
 }
