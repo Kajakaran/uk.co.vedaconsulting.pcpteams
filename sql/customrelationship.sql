@@ -1,5 +1,5 @@
 INSERT INTO `civicrm_custom_group` (`name`, `title`, `extends`, `extends_entity_column_id`, `extends_entity_column_value`, `style`, `collapse_display`, `help_pre`, `help_post`, `weight`, `is_active`, `table_name`, `is_multiple`, `min_multiple`, `max_multiple`, `collapse_adv_display`, `created_id`, `created_date`, `is_reserved`) VALUES 
- ('PCP_Relationship_Set', 'PCP Relationship Set', 'Relationship', NULL, NULL, 'Inline', 1, '', '', 3, 1, 'civicrm_value_pcp_relationship_set', 0, NULL, NULL, 0, NULL, NULL, 0)
+ ('PCP_Relationship_Set', 'PCP Relationship Set', 'Relationship', NULL, NULL, 'Inline', 1, '', '', 3, 1, 'civicrm_value_pcp_relationship_set', 0, NULL, NULL, 0, NULL, NULL, 0);
  SELECT @custom_group_id := LAST_INSERT_ID();
  
  INSERT INTO `civicrm_custom_field` (`custom_group_id`, `name`, `label`, `data_type`, `html_type`, `default_value`, `is_required`, `is_searchable`, `is_search_range`, `weight`, `help_pre`, `help_post`, `mask`, `attributes`, `javascript`, `is_active`, `is_view`, `options_per_line`, `text_length`, `start_date_years`, `end_date_years`, `date_format`, `time_format`, `note_columns`, `note_rows`, `column_name`, `option_group_id`, `filter`, `in_selector`) VALUES
