@@ -94,13 +94,14 @@ class CRM_Pcpteams_Form_TeamConfirm extends CRM_Core_Form {
     $emailParams = $values['friend'];
     // Find the msg_tpl ID of sample invite template
     $result = civicrm_api3('MessageTemplate', 'get', array( 'sequential' => 1, 'version'=> 3, 'msg_title' => "Sample Team Invite Template",));
+    $teampcpId = CRM_Pcpteams_Utils::getPcpIdByContactAndEvent($this->get('component_page_id'), $this->get('teamContactID'));
     if(!civicrm_error($result) && $result['id']) {
       // Send Invitation emails
-      CRM_Pcpteams_Utils::sendInviteEmail($result['id'], $this->_contactID, $emailParams);
+      CRM_Pcpteams_Utils::sendInviteEmail($result['id'], $this->_contactID, $emailParams, $teampcpId);
     }
-    
+    $contactDisplayName = CRM_Contact_BAO_Contact::displayName($this->_contactID);
     // Create Team Invite activity
-    CRM_Pcpteams_Utils::createPcpActivity(array('source' => $this->_contactID, 'target' => $this->get('teamContactID')), CRM_Pcpteams_Constant::C_CF_TEAM_INVITE, 'Invited to '.$this->get('teamName'), 'PCP Team Invite');
+    CRM_Pcpteams_Utils::createPcpActivity(array('source' => $this->_contactID, 'target' => $this->get('teamContactID')), CRM_Pcpteams_Constant::C_CF_TEAM_INVITE, 'Invited to Join Team '.$this->get('teamName'). 'by '.$contactDisplayName, 'PCP Team Invite');
   }
 
   /**
