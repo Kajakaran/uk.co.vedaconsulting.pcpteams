@@ -32,7 +32,7 @@
  * $Id$
  *
  */
-class CRM_PCP_BAO_PCP extends CRM_PCP_DAO_PCP {
+class CRM_Pcpteams_BAO_PCP extends CRM_PCP_DAO_PCP {
 
   /**
    * The action links that we need to display for the browse screen
@@ -946,6 +946,41 @@ INNER JOIN civicrm_uf_group ufgroup
     else {
       return $supporterProfileId;
     }
+  }
+  /**
+   * Function to create pcp
+   * takes an associative array and creates a pcp object and all the associated
+   *
+   * This function is invoked from within the web form layer and also from the api layer
+   *
+   * @param array $params (reference ) an assoc array of name/value pairs
+   *
+   * @throws Exception
+   * @return object CRM_PCP_DAO_PCP object
+   * @access public
+   * @static
+   */
+  
+  static function &create(&$params, $pcpBlock = TRUE) {
+    $pcp    = NULL;
+    $isEdit = TRUE;
+    if (!empty($params['id'])) {
+      CRM_Utils_Hook::pre('edit', 'PCP', $params['id'], $params);
+    }
+    else {
+      CRM_Utils_Hook::pre('create', 'PCP', NULL, $params);
+      $isEdit = FALSE;
+    }
+    
+    $pcp = self::add($params, $pcpBlock);
+    
+    if ($isEdit) {
+      CRM_Utils_Hook::post('edit', 'PCP', $pcp->id, $pcp);
+    }
+    else {
+      CRM_Utils_Hook::post('create', 'PCP', $pcp->id, $pcp);
+    }
+    return $pcp;
   }
 }
 
